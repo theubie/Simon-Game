@@ -5,8 +5,13 @@ var level = 0;
 
 $(document).keydown(function() {
   if (level == 0) {
-    $('h1').text = "Level 0";
-    nextSequence();
+    beginGame()
+  }
+});
+
+$(document).click(function() {
+  if (level == 0) {
+    beginGame()
   }
 });
 
@@ -62,6 +67,11 @@ function checkAnswer(checkLevel) {
     }, 1000)
   }
 
+}
+
+function beginGame() {
+  $('h1').text = "Level 0";
+  nextSequence();
 }
 
 function startOver() {
